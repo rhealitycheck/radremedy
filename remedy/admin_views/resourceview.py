@@ -57,6 +57,8 @@ def scaffold_resource_form(form_class):
         label=resource_column_labels['is_accessible'])
     form_class.has_sliding_scale = NullableBooleanField(
         label=resource_column_labels['has_sliding_scale'])
+    form_class.accepts_insurance = NullableBooleanField(
+        label=resource_column_labels['accepts_insurance'])
 
     return form_class
 
@@ -96,6 +98,7 @@ class ResourceView(AdminAuthMixin, ModelView):
         'is_wpath',
         'is_accessible',
         'has_sliding_scale',
+        'accepts_insurance'
         'visible',
         'advisory_notes',
         'is_approved',
@@ -151,6 +154,8 @@ class ResourceView(AdminAuthMixin, ModelView):
         'is_accessible',
         FilterEmpty(Resource.has_sliding_scale, 'Sliding Scale'),
         'has_sliding_scale',
+        FilterEmpty(Resource.accepts_insurance, 'Accepts Insurance'),
+        'accepts_insurance',
         'advisory_notes',
     )
 
@@ -200,6 +205,7 @@ class ResourceView(AdminAuthMixin, ModelView):
             'is_wpath',
             'is_accessible',
             'has_sliding_scale',
+            'accepts_insurance',
             rules.HTML('<hr />')),
             'Practice Information'),
 
@@ -972,6 +978,7 @@ class SubmittedResourceView(AdminAuthMixin, ModelView):
         'is_wpath',
         'is_accessible',
         'has_sliding_scale',
+        'accepts_insurance',
         'submitted_user',
         'submitted_date',
         'submitted_ip',
@@ -1093,6 +1100,7 @@ class SubmittedResourceView(AdminAuthMixin, ModelView):
             'is_wpath',
             'is_accessible',
             'has_sliding_scale',
+            'accepts_insurance',
             rules.HTML('<hr />')),
             'Practice Information'),
 

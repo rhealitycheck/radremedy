@@ -165,6 +165,7 @@ resource_column_labels = {
     'is_wpath': 'WPATH',
     'is_accessible': 'ADA/Wheelchair Accessible',
     'has_sliding_scale': 'Sliding Scale',
+    'accepts_insurance': 'Accepts Insurance',
     'is_approved': 'Approved',
     'submitted_user': 'Submitted User',
     'submitted_ip': 'Submitted IP',

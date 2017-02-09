@@ -117,6 +117,7 @@ class Resource(db.Model):
     is_wpath = db.Column(db.Boolean, nullable=True)
     is_accessible = db.Column(db.Boolean, nullable=True)
     has_sliding_scale = db.Column(db.Boolean, nullable=True)
+    accepts_insurance = db.Column(db.Boolean, nullable=True)
     hospital_affiliation = db.Column(db.UnicodeText, nullable=True)
 
     date_created = db.Column(
